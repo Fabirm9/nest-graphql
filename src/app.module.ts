@@ -26,7 +26,7 @@ import { ListItemModule } from './list-item/list-item.module';
         playground: false,
         autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
         plugins: [ApolloServerPluginLandingPageLocalDefault()],
-        introspection: process.env.ENVIRONMENT !== 'prod',
+        introspection: true,
         context({ req }) {
           // const token = req.headers.authorization?.replace('Bearer', '').trim();
           // if (!token) throw Error('Token needed');
