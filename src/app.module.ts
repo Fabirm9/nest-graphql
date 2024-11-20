@@ -47,7 +47,7 @@ import { ListItemModule } from './list-item/list-item.module';
     TypeOrmModule.forRoot({
       type: 'postgres',
       ssl:
-        process.env.ENVIRONMENT === 'prod'
+        process.env.STATE === 'prod'
           ? { rejectUnauthorized: false, sslmode: require }
           : (false as any),
       host: process.env.DB_HOST,
@@ -78,7 +78,7 @@ import { ListItemModule } from './list-item/list-item.module';
 })
 export class AppModule {
   constructor() {
-    console.log('environment:', process.env.ENVIRONMENT);
+    console.log('environment:', process.env.STATE);
     console.log('host:', process.env.DB_HOST);
     console.log('port:', +process.env.DB_PORT);
     console.log('username:', process.env.DB_USERNAME);
